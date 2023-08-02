@@ -29,6 +29,8 @@ Example
 
 using namespace std;
 
+int cnt = 0;
+
 bool checkPath(char maze[][10], int m, int n, int i, int j) {
 
 	// base case
@@ -44,6 +46,8 @@ bool checkPath(char maze[][10], int m, int n, int i, int j) {
 	if (i == m - 1 and j == n - 1) {
 
 		// you are already at the destination (assume destination is not blocked)
+
+		cnt++;
 
 		return true;
 
@@ -96,6 +100,8 @@ int main() {
 	int n = 4;
 
 	checkPath(maze, m, n, 0, 0) ? cout << "path exists" << endl : cout << "path does not exist" << endl;
+
+	cout << cnt << endl;
 
 	return 0;
 }
